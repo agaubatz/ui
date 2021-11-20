@@ -18,7 +18,7 @@ export const hasScrollbars = function (node) {
  * @returns {Boolean}
  */
 export const isScrollable = function (node) {
-  if (!node || !(typeof node === "object" && node instanceof Element) || node === document.body) {
+  if (!node || !(typeof node === "object" && node instanceof Element) || node === document.body || (node.classList && node.classList.contains('ignoreIsScrollable'))) {
     return false;
   }
 
